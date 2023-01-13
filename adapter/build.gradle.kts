@@ -28,11 +28,15 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:31.1-jre")
+
+    // CLI related
+    implementation("info.picocli:picocli:4.7.0")
+
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("jvmdap.AppKt")
+    mainClass.set("jvmdap.MainKt")
 }
 
 tasks.named<Test>("test") {

@@ -8,4 +8,4 @@
  */
 
 rootProject.name = "jvm-dap"
-include("app")
+include("adapter")
