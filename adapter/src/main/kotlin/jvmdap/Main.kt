@@ -3,6 +3,7 @@
  */
 package jvmdap
 
+import jvmdap.server.DapServer
 import picocli.CommandLine
 import picocli.CommandLine.Model.CommandSpec
 import picocli.CommandLine.Command
@@ -37,6 +38,9 @@ class JvmDapCommand: Callable<Int> {
         val client = server.accept()
         server.close()
         println("Accepted connection from ${client.inetAddress.hostAddress}:${client.port}")
+        val dapServer = DapServer(client.getInputStream(), client.getOutputStream())
+        dapServer.waitForTermination()
+        println("Done.")
         return 0
     }
 

@@ -32,6 +32,11 @@ dependencies {
     // CLI related
     implementation("info.picocli:picocli:4.7.0")
 
+    // DAP
+    implementation("org.eclipse.lsp4j:org.eclipse.lsp4j:0.19.0")
+    implementation("org.eclipse.lsp4j:org.eclipse.lsp4j.debug:0.19.0")
+
+
 }
 
 application {
