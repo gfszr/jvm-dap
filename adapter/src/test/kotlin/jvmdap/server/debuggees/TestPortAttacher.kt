@@ -2,7 +2,7 @@ package jvmdap.server.debuggees
 
 import kotlin.test.Test
 
-class TestAttacher {
+class TestPortAttacher {
 
     @Test fun testJVMProcessLauncher() {
 

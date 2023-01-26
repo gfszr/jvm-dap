@@ -7,7 +7,7 @@ import java.io.InputStream
 
 const val DEFAULT_TIMEOUT_MS = 5000
 
-class ProcessLauncher(private val builder: ProcessBuilder): VmCreator {
+open class ProcessLauncher(private val builder: ProcessBuilder): VmCreator {
     lateinit var process: Process
 
     override fun createJvm(): VirtualMachine {
@@ -36,7 +36,7 @@ class ProcessLauncher(private val builder: ProcessBuilder): VmCreator {
         return process.inputStream
     }
 }
-
+//
 fun appendDebugToToolOptions(toolOptions: String?, address: String): String {
     val options = toolOptions ?: ""
     if ("-agentlib:jdwp" in options) {
